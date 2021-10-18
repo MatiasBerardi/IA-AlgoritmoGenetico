@@ -113,7 +113,7 @@ public class Algoritmo {
             result += 10;
 
         //Piso(Romero) = Piso(1.5) + 3
-        if (getPisoValueforFamilia(romero, gt) == (getPisoValueForPropina((BitChromosome) gt.getChromosome(0)) + 0.5))
+        if (getPisoValueforFamilia(romero, gt) == (getPisoValueForPropina((BitChromosome) gt.getChromosome(0)) + 3))
             result += 10;
 
         //Propina(Morales) = Propina(Romero) + 0.5
