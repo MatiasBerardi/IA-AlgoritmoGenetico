@@ -61,51 +61,51 @@ public class Algoritmo {
             result -= 5;
 
         //Propina(Romero) != 1.5 [Posicion 0 del cromosoma = 1.5]
-        if (!getFamilia((BitChromosome) gt.getChromosome(0)).equals("10"))
+        if (!getFamilia((BitChromosome) gt.getChromosome(0)).equals(romero))
             result += 10;
 
         //Propina(Morales) != 0.5 [Posicion 2 del cromosoma = 0.5]
-        if (!getFamilia((BitChromosome) gt.getChromosome(2)).equals("01"))
+        if (!getFamilia((BitChromosome) gt.getChromosome(2)).equals(morales))
             result += 10;
 
         //Piso(Romero) != 2
-        if (!getPisoforFamilia("10", gt).equals("00"))
+        if (!getPisoforFamilia(romero, gt).equals(piso2))
             result += 10;
 
         //Piso(Morales) != 8
-        if (!getPisoforFamilia("01", gt).equals("10"))
+        if (!getPisoforFamilia(morales, gt).equals(piso8))
             result += 10;
 
-        //Piso(Franco) != 8
-        if (!getPisoforFamilia("00", gt).equals("00"))
+        //Piso(Franco) != 2
+        if (!getPisoforFamilia(franco, gt).equals(piso2))
             result += 10;
         
         //Pizza(Morales) != Anchoas
-        if (!getPizzaforFamilia("01", gt).equals("00"))
+        if (!getPizzaforFamilia(morales, gt).equals(anchoas))
             result += 10;
 
         //Pizza(Franco) != Palmitos
-        if (!getPizzaforFamilia("00", gt).equals("10"))
+        if (!getPizzaforFamilia(franco, gt).equals(palmitos))
             result += 10;
 
         //Propina(Morrones) != 1.5 [Posicion 0 del cromosoma = 0.5]
-        if (!getPizza((BitChromosome) gt.getChromosome(0)).equals("01"))
+        if (!getPizza((BitChromosome) gt.getChromosome(0)).equals(morrones))
             result += 10;
 
         //Pizza(2) = Palmito
-        if (!getPizzaforPiso("00", gt).equals("10"))
+        if (!getPizzaforPiso(piso2, gt).equals(palmitos))
             result += 10;
 
         //Piso(1.5) != 8 [Posicion 0 del cromosoma = 1.5]
-        if (!getPiso((BitChromosome) gt.getChromosome(0)).equals("10"))
+        if (!getPiso((BitChromosome) gt.getChromosome(0)).equals(piso8))
             result += 10;
 
         //Pizza(8) != Anchoas
-        if (!getPizzaforPiso("10", gt).equals("00"))
+        if (!getPizzaforPiso(piso8, gt).equals(anchoas))
             result += 10;
 
         //Propina(5) != 0.5 [Posicion 2 del cromosoma = 0.5]
-        if (!getPiso((BitChromosome) gt.getChromosome(2)).equals("01"))
+        if (!getPiso((BitChromosome) gt.getChromosome(2)).equals(piso5))
             result += 10;
 
         //Propina(Morrones) = Propina(5) - 0.5
