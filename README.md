@@ -28,3 +28,9 @@ Cromosoma:
 		01: 5t0
 		10: 8vo
 		11: Invalido
+
+## Para Ejecutar
+
+- Es necesario tener instalada la versión de JAVA 11 o superior.
+- Ejecutar el comando **java -jar IA_GA.jar**
+- Ingresar párametros solicitados por el programa y comprobar resultados.
