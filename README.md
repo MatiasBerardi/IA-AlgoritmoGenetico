@@ -1,5 +1,7 @@
 # IA-AlgoritmoGenetico
 
+Aclaración: Los primeros 2 bits del resultado son ignorados por el algoritmo.
+
 C1: 1.5
 
 C2: 1.0
@@ -31,7 +33,7 @@ Cromosoma:
 
 ## Para Ejecutar
 
-- Es necesario tener instalada la versión de JAVA 11 o superior.
+- Es necesario tener instalada la versión de JAVA 11 o superior: https://www.oracle.com/ar/java/technologies/javase/jdk11-archive-downloads.html.
 - Ubicación del ejecutable: /out/artifacts/IA_GA_jar  
 - Ejecutar el comando **java -jar IA_GA.jar**
 - Ingresar párametros solicitados por el programa y comprobar resultados.
