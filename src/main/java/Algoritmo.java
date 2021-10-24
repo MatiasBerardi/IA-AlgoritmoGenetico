@@ -45,7 +45,11 @@ public class Algoritmo {
 
             Engine<BitGene, Integer> engine = Engine.builder(Algoritmo::eval, gtf).build();
 
-            Genotype<BitGene> result = engine.stream().limit(corridas).collect(EvolutionResult.toBestGenotype());
+
+            Genotype<BitGene> result = engine.stream().
+                    limit(corridas)
+                    .peek(er -> System.out.println(er.getBestPhenotype()))
+                    .collect(EvolutionResult.toBestGenotype());
 
             System.out.println("Resultado " + result);
         }
@@ -99,7 +103,7 @@ public class Algoritmo {
             result += 10;
 
         //Pizza(2) = Palmito
-        if (!getPizzaforPiso(piso2, gt).equals(palmitos))
+        if (getPizzaforPiso(piso2, gt).equals(palmitos))
             result += 10;
 
         //Piso(1.5) != 8 [Posicion 0 del cromosoma = 1.5]
