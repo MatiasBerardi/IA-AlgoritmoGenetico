@@ -32,5 +32,6 @@ Cromosoma:
 ## Para Ejecutar
 
 - Es necesario tener instalada la versión de JAVA 11 o superior.
+- Ubicación del ejecutable: /out/artifacts/IA_GA_jar  
 - Ejecutar el comando **java -jar IA_GA.jar**
 - Ingresar párametros solicitados por el programa y comprobar resultados.
