@@ -23,13 +23,11 @@ public class GetPropertyValues
                 throw new FileNotFoundException("property file '" + propFileName + "' not found in the classpath");
             }
 
-            Date time = new Date(System.currentTimeMillis());
-
             // get the property value and print it out
             double p = Double.parseDouble(prop.getProperty("p"));
             result = p;
 
-            System.out.println(result);
+            System.out.println("Probabilidad de 1s: " + result);
 
         } catch (Exception e) {
             System.out.println("Exception: " + e);

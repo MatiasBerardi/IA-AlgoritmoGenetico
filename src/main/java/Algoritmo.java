@@ -6,6 +6,7 @@ import org.jenetics.engine.EvolutionResult;
 import org.jenetics.util.Factory;
 
 import java.io.IOException;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class Algoritmo {
@@ -23,26 +24,31 @@ public class Algoritmo {
 
 
     public static void main(String[] args) {
-        GetPropertyValues propertyValues = new GetPropertyValues();
-        double p = 0.5;
+        while (true) {
+            GetPropertyValues propertyValues = new GetPropertyValues();
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Ingrese cantidad de corridas: ");
+            int corridas = sc.nextInt();
+            double p = 0.5;
 
-        try {
-            p = propertyValues.getPropValues();
-        } catch (IOException e) {
-            e.printStackTrace();
+            try {
+                p = propertyValues.getPropValues();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            Factory<Genotype<BitGene>> gtf = Genotype.of(
+                    BitChromosome.of(6, p),
+                    BitChromosome.of(6, p),
+                    BitChromosome.of(6, p)
+            );
+
+            Engine<BitGene, Integer> engine = Engine.builder(Algoritmo::eval, gtf).build();
+
+            Genotype<BitGene> result = engine.stream().limit(corridas).collect(EvolutionResult.toBestGenotype());
+
+            System.out.println("Resultado " + result);
         }
-
-        Factory<Genotype<BitGene>> gtf = Genotype.of(
-                BitChromosome.of(6, p),
-                BitChromosome.of(6, p),
-                BitChromosome.of(6, p)
-        );
-
-        Engine<BitGene, Integer> engine = Engine.builder(Algoritmo::eval, gtf).build();
-
-        Genotype<BitGene> result = engine.stream().limit(200).collect(EvolutionResult.toBestGenotype());
-
-        System.out.println("Resultado " + result);
     }
 
     private static Integer eval(Genotype<BitGene> gt) {
@@ -79,7 +85,7 @@ public class Algoritmo {
         //Piso(Franco) != 2
         if (!getPisoforFamilia(franco, gt).equals(piso2))
             result += 10;
-        
+
         //Pizza(Morales) != Anchoas
         if (!getPizzaforFamilia(morales, gt).equals(anchoas))
             result += 10;
